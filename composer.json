@@ -1,7 +1,7 @@
 {
 	"name": "christi4n/typo3-v9",
 	"description" : "TYPO3 v9 CMS distribution",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "GPL-2.0-or-later",
 	"config": {
 		"platform": {
@@ -48,6 +48,12 @@
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
 		]
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": "public"
+		}
 	},
 	"require-dev": {
 		"windinternet/randomdata": "^1.0"

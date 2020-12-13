@@ -43,5 +43,7 @@ WORKDIR /var/www
 
 COPY --from=composer /app /var/www/
 
+CMD mv /app/www/public/* /app/www/html
+
 # Expose the port nginx is reachable on
 EXPOSE 9000
