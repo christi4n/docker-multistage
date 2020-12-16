@@ -8,15 +8,18 @@ ARG WEB_DOCUMENT_ROOT
 ENV WEB_DOCUMENT_ROOT=$WEB_DOCUMENT_ROOT
 
 # Copy composer files from project root into composer container's working dir
-COPY composer.* /app/
+# COPY composer.* /app/
+
+WORKDIR /app
+
+RUN git clone https://github.com/christi4n/typo3-v9.git
+RUN mv typo3-v9/* $PWD/ \
+    && rm typo3-v9/* -Rf
 
 # Run composer to build dependencies in vendor folder
 RUN set -xe \
     && composer install --no-dev --no-scripts --no-suggest --no-interaction --prefer-dist --optimize-autoloader
 
-# Copy everything from project root into composer container's working dir
-# COPY . /app
-WORKDIR /app
 # Generated optimized autoload files containing all classes from vendor folder and project itself
 RUN composer dump-autoload --no-dev --optimize --classmap-authoritative
 
@@ -33,17 +36,17 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Setup document root
 RUN mkdir -p /var/www
 
-RUN chown -R application:application /var/www
-
-# Switch to use a non-root user from here on
-USER nobody
-
-# Add application
+# Directory where we are
 WORKDIR /var/www
 
 COPY --from=composer /app /var/www/
 
-CMD mv /app/www/public/* /app/www/html
+RUN chown -R application:application /var/www/ && chmod -R g+rwX /var/www/
+
+# Switch to use a non-root user from here on
+USER application
+
+RUN touch FIRST_INSTALL
 
 # Expose the port nginx is reachable on
 EXPOSE 9000
