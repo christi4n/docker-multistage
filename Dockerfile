@@ -46,7 +46,7 @@ RUN chown -R application:application /var/www/ && chmod -R g+rwX /var/www/
 # Switch to use a non-root user from here on
 USER application
 
-RUN touch FIRST_INSTALL
+RUN touch public/typo3conf/ENABLE_INSTALL_TOOL
 
 # Expose the port nginx is reachable on
 EXPOSE 9000
