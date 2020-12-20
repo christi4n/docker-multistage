@@ -7,9 +7,6 @@ ARG WEB_DOCUMENT_ROOT
 
 ENV WEB_DOCUMENT_ROOT=$WEB_DOCUMENT_ROOT
 
-# Copy composer files from project root into composer container's working dir
-# COPY composer.* /app/
-
 WORKDIR /app
 
 RUN git clone https://github.com/christi4n/typo3-v9.git
@@ -24,7 +21,7 @@ RUN set -xe \
 RUN composer dump-autoload --no-dev --optimize --classmap-authoritative
 
 #
-# STAGE 2: nginx
+# STAGE 2: Apache web server
 #
 FROM webdevops/php-apache:7.4
 
