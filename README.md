@@ -4,7 +4,7 @@
 Launch a MySQL server:
 
 ```
-docker run -d --volume typo3-mysql:/var/lib/mysql/ --network typo3-db --env MYSQL_DATABASE=typo3 --env MYSQL_USER=db --env MYSQL_PASSWORD=db --env MYSQL_ROOT_PASSWORD=db --name typo3-mysql2 mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+docker run -d --volume typo3-mysql:/var/lib/mysql/ --network typo3-db --env MYSQL_DATABASE=typo3 --env MYSQL_USER=db --env MYSQL_PASSWORD=db --env MYSQL_ROOT_PASSWORD=db --name typo3-mysql mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 ```
 
 Use phpmyadmin for database administration:
