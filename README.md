@@ -1,3 +1,13 @@
+## Purpose of this repo
+
+This repo allows you to run a sample LAMP instance with the TYPO3 CMS.
+There's a .env file at the root so you can specify your own variables.
+
+There are four variable types:
+- TYPO3 context
+- DB configuration (you have to run a dedicated container for MySQL)
+- Mail
+- SYS configuration for TYPO3
 
 ### 1.0.3
 
