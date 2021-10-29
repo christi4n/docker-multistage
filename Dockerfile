@@ -1,7 +1,7 @@
 #
 # STAGE 1: composer
 #
-FROM composer:1.10.17 as composer
+FROM composer:2.1.9 as composer
 
 ARG WEB_DOCUMENT_ROOT
 
@@ -9,9 +9,12 @@ ENV WEB_DOCUMENT_ROOT=$WEB_DOCUMENT_ROOT
 
 WORKDIR /app
 
-RUN git clone https://github.com/christi4n/typo3-v9.git
-RUN mv typo3-v9/* $PWD/ \
-    && rm typo3-v9/* -Rf
+RUN git clone https://github.com/christi4n/typo3v11-base.git
+RUN mv typo3v11-base/* $PWD/ \
+    && rm typo3v11-base -Rf
+
+# Clear cache for previous buildq
+RUN composer clearcache
 
 # Run composer to build dependencies in vendor folder
 RUN set -xe \
