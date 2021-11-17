@@ -24,7 +24,7 @@ Here is what you should expect:
 
 ![TYPO3 v11 backend](https://raw.githubusercontent.com/christi4n/docker-multistage/feature/typo3v11/assets/multistage-typo3-v11-backend.png)
 
-#### Backend
+#### Frontend
 
 ![TYPO3 v11 frontend](https://raw.githubusercontent.com/christi4n/docker-multistage/feature/typo3v11/assets/multistage-typo3-v11-frontend.png)
 ### 2.0.3
