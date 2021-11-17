@@ -1,7 +1,7 @@
 #
 # STAGE 1: composer
 #
-FROM composer:2.1.9 as composer
+FROM composer:2.1.12 as composer
 
 ARG WEB_DOCUMENT_ROOT
 
