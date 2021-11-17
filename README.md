@@ -22,11 +22,11 @@ Here is what you should expect:
 
 #### Backend
 
-![TYPO3 v11 backend](https://raw.githubusercontent.com/christi4n/docker-multistage/feature/typo3v11/assets/multistage-typo3-v11-backend.png)
+![TYPO3 v11 backend](https://raw.githubusercontent.com/christi4n/docker-multistage/feature/master/assets/multistage-typo3-v11-backend.png)
 
 #### Frontend
 
-![TYPO3 v11 frontend](https://raw.githubusercontent.com/christi4n/docker-multistage/feature/typo3v11/assets/multistage-typo3-v11-frontend.png)
+![TYPO3 v11 frontend](https://raw.githubusercontent.com/christi4n/docker-multistage/feature/master/assets/multistage-typo3-v11-frontend.png)
 ### 2.0.3
 
 This version is using TYPO3 v11.
